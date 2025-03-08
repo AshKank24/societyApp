@@ -7,7 +7,7 @@ async function fetchDetails() {
     }
 
     try {
-        const response = await fetch(`http://127.0.0.1:8000/get_user/${flatNumber}`);
+        const response = await fetch(`https://societyapp-us5j.onrender.com/get_user/${flatNumber}`);
         if (!response.ok) {
             throw new Error("Flat number not found!");
         }
