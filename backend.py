@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import supabase
 import dotenv
+import uvicorn
 import os
 
 dotenv.load_dotenv()
@@ -54,3 +55,7 @@ def deduct_member(flat_number: str):
         return {"success": True, "message": "Member deducted", "remaining": new_remaining}
     else:
         return {"error": "No remaining members to deduct"}
+
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8000))  # Default to 8000 if no PORT is set
+    uvicorn.run("backend:app", host="0.0.0.0", port=port, reload=True)
