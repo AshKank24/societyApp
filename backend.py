@@ -54,7 +54,7 @@ def deduct_member(flat_number: str):
         # Deduct 1 from remaining amount
         new_remaining = remaining_amount - 1
         supabase_client.table("primaryData").update({"remainingMembers": new_remaining}).eq("flatNumber", flat_number).execute()
-        supabase_client.table("entryLogs").insert({"flatNumber": flat_number}).eq("event", EVENT).execute
+        supabase_client.table("entryLogs").insert({"flatNumber": flat_number}).eq("event", EVENT).execute()
         return {"success": True, "message": "Member deducted", "remaining": new_remaining}
     else:
         return {"error": "No remaining members to deduct"}
