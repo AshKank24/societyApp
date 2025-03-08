@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VCC Vaiga Holi QR</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>VCC Vaiga Holi QR</h1>
+        <input type="text" id="flatInput" placeholder="Enter Your Flat Number">
+        <button onclick="fetchDetails()">Get QR Code</button>
+
+        <div id="details" class="hidden">
+            <h2 id="name"></h2>
+            <p><strong>Total Members : </strong><span id="totalMembers"></span></p>
+            <p><strong>Remaining Members : </strong><span id="remainingMembers"></span></p>
+            <img id="qrCode" alt="QR Code">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
